@@ -3,11 +3,9 @@ import { render } from 'react-dom';
 import { connect, Provider } from 'react-redux';
 import axios from 'axios';
 import Nav from './Nav';
-import store from './store';
+import store, {fetchGroceries} from './store';  //export const, need {}
 import Groceries from './Groceries';
 import CreateForm from './CreateForm';
-
-
 
 class _App extends Component{
   componentDidMount(){
@@ -35,13 +33,12 @@ const App = connect(
   (dispatch)=> {
     return {
       setView: (view)=> dispatch({ type: 'SET_VIEW', view }), 
-      bootstrap: async()=> {
-        const groceries = (await axios.get('/api/groceries')).data;
-        dispatch({
-          type: 'LOAD',
-          groceries
-        })
-      } 
+      bootstrap: ()=> dispatch(fetchGroceries())
+        // const groceries = (await axios.get('/api/groceries')).data;
+        // dispatch({
+        //   type: 'LOAD',
+        //   groceries
+        // }) 
     }
   }
 )(_App);

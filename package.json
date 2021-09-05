@@ -14,8 +14,12 @@
   "dependencies": {
     "express": "^4.17.1",
     "faker": "^5.1.0",
+    "install": "^0.13.0",
     "pg": "^8.5.1",
-    "sequelize": "^6.3.5"
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0",
+    "sequelize": "^6.3.5",
+    "thunk": "^0.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
@@ -26,7 +30,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-redux": "^7.2.2",
-    "redux": "^4.0.5",
+    "redux": "^4.1.1",
     "webpack": "^5.9.0",
     "webpack-cli": "^4.2.0"
   }
